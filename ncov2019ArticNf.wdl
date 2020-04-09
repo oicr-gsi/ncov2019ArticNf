@@ -122,11 +122,17 @@ task illumina_ncov2019ArticNf {
     --directory "$(dirname ~{fastqR1})" \
     --prefix "~{outputFileNamePrefix}" \
     --schemeRepoURL ~{ncov2019ArticPath}
+
+    # rename some of the outputs
+    ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R1_val_1.fq.gz" \
+    ~{outputFileNamePrefix}_R1.trimmed.fastq.gz
+    ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R2_val_2.fq.gz" \
+    ~{outputFileNamePrefix}_R2.trimmed.fastq.gz
   >>>
 
   output {
-    File readTrimmingFastqR1 = "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R1_val_1.fq.gz"
-    File readTrimmingFastqR2 = "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R2_val_2.fq.gz"
+    File readTrimmingFastqR1 = "~{outputFileNamePrefix}_R1.trimmed.fastq.gz"
+    File readTrimmingFastqR2 = "~{outputFileNamePrefix}_R2.trimmed.fastq.gz"
     File readMappingBam = "results/ncovIllumina_sequenceAnalysis_readMapping/~{outputFileNamePrefix}.sorted.bam"
     File trimPrimerSequencesBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.bam"
     File trimPrimerSequencesPrimerTrimmedBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.primertrimmed.sorted.bam"
