@@ -13,7 +13,7 @@
   },
   "tests": [
     {
-      "id": "SCTSK_0004 test",
+      "id": "SCTSK_0004_test",
       "parameters": {
         "wdl_inputs": {
           "ncov2019ArticNf.fastqR1": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SWID_16554996_SCTSK_0004_R1_001.fastq.gz",
@@ -23,7 +23,7 @@
       }
     },
     {
-      "id": "SCTSK_0004_nn_n_PE_661_TS_S10 test",
+      "id": "SCTSK_0004_nn_n_PE_661_TS_S10_test",
       "parameters": {
         "wdl_inputs": {
           "ncov2019ArticNf.fastqR1": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
