@@ -14,7 +14,7 @@ workflow ncov2019ArticNf {
       outputFileNamePrefix = outputFileNamePrefix
   }
 
-  call runNcov2019ArticNf {
+  call illumina_ncov2019ArticNf {
     input:
       fastqR1 = renameInputs.renamedFastqR1,
       fastqR2 = renameInputs.renamedFastqR2,
@@ -22,6 +22,15 @@ workflow ncov2019ArticNf {
   }
 
   output {
+    File readTrimmingFastqR1 = illumina_ncov2019ArticNf.readTrimmingFastqR1
+    File readTrimmingFastqR2 = illumina_ncov2019ArticNf.readTrimmingFastqR2
+    File readMappingBam = illumina_ncov2019ArticNf.readMappingBam
+    File trimPrimerSequencesBam = illumina_ncov2019ArticNf.trimPrimerSequencesBam
+    File trimPrimerSequencesPrimerTrimmedBam = illumina_ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam
+    File makeConsensusFasta = illumina_ncov2019ArticNf.makeConsensusFasta
+    File qcPlotsPng = illumina_ncov2019ArticNf.qcPlotsPng
+    File callVariantsTsv = illumina_ncov2019ArticNf.callVariantsTsv
+    File qcCsv = illumina_ncov2019ArticNf.qcCsv
   }
 
   parameter_meta {
@@ -45,6 +54,15 @@ workflow ncov2019ArticNf {
       }
     ]
     output_meta: {
+      readTrimmingFastqR1: "Fastq R1 from readTrimming step.",
+      readTrimmingFastqR2: "Fastq R1 from readTrimming step.",
+      readMappingBam: "Sorted bam from readMapping step.",
+      trimPrimerSequencesBam: "Mapped bam from trimPrimerSequences step.",
+      trimPrimerSequencesPrimerTrimmedBam: "Mapped + primer trimmer bam from trimPrimerSequences step.",
+      makeConsensusFasta: "Consensus fasta from makeConsensus step.",
+      callVariantsTsv: "Variants tsv from callVariants step.",
+      qcPlotsPng: "Qc plot (depth) png from qcPlots step.",
+      qcCsv: "Qc csv from qc step."
     }
   }
 
@@ -83,7 +101,7 @@ task renameInputs {
   }
 }
 
-task runNcov2019ArticNf {
+task illumina_ncov2019ArticNf {
   input {
     File fastqR1
     File fastqR2
@@ -107,6 +125,15 @@ task runNcov2019ArticNf {
   >>>
 
   output {
+    File readTrimmingFastqR1 = "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R1_val_1.fq.gz"
+    File readTrimmingFastqR2 = "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R2_val_2.fq.gz"
+    File readMappingBam = "results/ncovIllumina_sequenceAnalysis_readMapping/~{outputFileNamePrefix}.sorted.bam"
+    File trimPrimerSequencesBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.bam"
+    File trimPrimerSequencesPrimerTrimmedBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.primertrimmed.sorted.bam"
+    File makeConsensusFasta = "results/ncovIllumina_sequenceAnalysis_makeConsensus/~{outputFileNamePrefix}.primertrimmed.consensus.fa"
+    File callVariantsTsv = "results/ncovIllumina_sequenceAnalysis_callVariants/~{outputFileNamePrefix}.variants.tsv"
+    File qcPlotsPng = "results/qc_plots/~{outputFileNamePrefix}.depth.png"
+    File qcCsv = "results/~{outputFileNamePrefix}.qc.csv"
   }
 
   runtime {

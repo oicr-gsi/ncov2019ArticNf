@@ -37,17 +37,26 @@ Parameter|Value|Default|Description
 ---|---|---|---
 `renameInputs.mem`|Int|1|Memory (in GB) to allocate to the job.
 `renameInputs.timeout`|Int|1|Maximum amount of time (in hours) the task can run for.
-`runNcov2019ArticNf.mem`|Int|8|Memory (in GB) to allocate to the job.
-`runNcov2019ArticNf.timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
-`runNcov2019ArticNf.modules`|String|"ncov2019-artic-nf/1 artic-ncov2019/1"|Environment module name and version to load (space separated) before command execution.
-`runNcov2019ArticNf.ncov2019ArticNextflowPath`|String|"$NCOV2019_ARTIC_NF_ROOT"|Path to the ncov2019-artic-nf repository directory.
-`runNcov2019ArticNf.ncov2019ArticPath`|String|"$ARTIC_NCOV2019_ROOT"|Path to the artic-ncov2019 repository directory or url
+`illumina_ncov2019ArticNf.mem`|Int|8|Memory (in GB) to allocate to the job.
+`illumina_ncov2019ArticNf.timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
+`illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf/1 artic-ncov2019/1"|Environment module name and version to load (space separated) before command execution.
+`illumina_ncov2019ArticNf.ncov2019ArticNextflowPath`|String|"$NCOV2019_ARTIC_NF_ROOT"|Path to the ncov2019-artic-nf repository directory.
+`illumina_ncov2019ArticNf.ncov2019ArticPath`|String|"$ARTIC_NCOV2019_ROOT"|Path to the artic-ncov2019 repository directory or url
 
 
 ### Outputs
 
 Output | Type | Description
 ---|---|---
+`readTrimmingFastqR1`|File|Fastq R1 from readTrimming step.
+`readTrimmingFastqR2`|File|Fastq R1 from readTrimming step.
+`readMappingBam`|File|Sorted bam from readMapping step.
+`trimPrimerSequencesBam`|File|Mapped bam from trimPrimerSequences step.
+`trimPrimerSequencesPrimerTrimmedBam`|File|Mapped + primer trimmer bam from trimPrimerSequences step.
+`makeConsensusFasta`|File|Consensus fasta from makeConsensus step.
+`qcPlotsPng`|File|Qc plot (depth) png from qcPlots step.
+`callVariantsTsv`|File|Variants tsv from callVariants step.
+`qcCsv`|File|Qc csv from qc step.
 
 
 ## Niassa + Cromwell
