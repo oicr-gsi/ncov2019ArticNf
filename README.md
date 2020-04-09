@@ -35,6 +35,8 @@ Parameter|Value|Default|Description
 #### Optional task parameters:
 Parameter|Value|Default|Description
 ---|---|---|---
+`renameInputs.mem`|Int|1|Memory (in GB) to allocate to the job.
+`renameInputs.timeout`|Int|1|Maximum amount of time (in hours) the task can run for.
 `runNcov2019ArticNf.mem`|Int|8|Memory (in GB) to allocate to the job.
 `runNcov2019ArticNf.timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
 `runNcov2019ArticNf.modules`|String|"ncov2019-artic-nf/1 artic-ncov2019/1"|Environment module name and version to load (space separated) before command execution.
