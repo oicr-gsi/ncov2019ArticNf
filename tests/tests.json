@@ -31,6 +31,28 @@
           "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004"
         }
       }
+    },
+    {
+      "id": "allow_no_primers_true",
+      "parameters": {
+        "wdl_inputs": {
+          "ncov2019ArticNf.fastqR1": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+          "ncov2019ArticNf.fastqR2": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+          "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+          "ncov2019ArticNf.illumina_ncov2019ArticNf.allowNoprimer": true
+        }
+      }
+    },
+    {
+      "id": "allow_no_primers_false",
+      "parameters": {
+        "wdl_inputs": {
+          "ncov2019ArticNf.fastqR1": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+          "ncov2019ArticNf.fastqR2": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+          "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+          "ncov2019ArticNf.illumina_ncov2019ArticNf.allowNoprimer": false
+        }
+      }
     }
   ]
 }

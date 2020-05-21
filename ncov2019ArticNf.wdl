@@ -107,6 +107,14 @@ task illumina_ncov2019ArticNf {
     File fastqR2
     String outputFileNamePrefix
 
+    Boolean? allowNoprimer
+    Int? illuminaKeepLen
+    Int? illuminaQualThreshold
+    Int? mpileupDepth
+    Float? ivarFreqThreshold
+    Float? ivarMinDepth
+    String? additionalParameters
+
     Int mem = 8
     Int timeout = 5
     String modules = "ncov2019-artic-nf/1 artic-ncov2019/1"
@@ -121,7 +129,14 @@ task illumina_ncov2019ArticNf {
     --illumina \
     --directory "$(dirname ~{fastqR1})" \
     --prefix "~{outputFileNamePrefix}" \
-    --schemeRepoURL ~{ncov2019ArticPath}
+    --schemeRepoURL ~{ncov2019ArticPath} \
+    ~{true="--allowNoprimer true" false="--allowNoprimer false" allowNoprimer} \
+    ~{"--illuminaKeepLen " + illuminaKeepLen} \
+    ~{"--illuminaQualThreshold " + illuminaQualThreshold} \
+    ~{"--mpileupDepth " + mpileupDepth} \
+    ~{"--ivarFreqThreshold " + ivarFreqThreshold} \
+    ~{"--ivarMinDepth " + ivarMinDepth} \
+    ~{additionalParameters}
 
     # rename some of the outputs
     ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R1_val_1.fq.gz" \
@@ -152,6 +167,13 @@ task illumina_ncov2019ArticNf {
     fastqR1: "Read 1 fastq file."
     fastqR2: "Read 2 fastq file."
     outputFileNamePrefix: "Output prefix to prefix output file names with."
+    allowNoprimer: "Allow reads that don't have primer sequence? Ligation prep = false, nextera = true."
+    illuminaKeepLen: "Length of illumina reads to keep after primer trimming."
+    illuminaQualThreshold: "Sliding window quality threshold for keeping reads after primer trimming (illumina)."
+    mpileupDepth: "Mpileup depth for ivar."
+    ivarFreqThreshold: "ivar frequency threshold for variant."
+    ivarMinDepth: "Minimum coverage depth to call variant."
+    additionalParameters: "Additional parameters to add to the nextflow command."
     mem: "Memory (in GB) to allocate to the job."
     timeout: "Maximum amount of time (in hours) the task can run for."
     modules: "Environment module name and version to load (space separated) before command execution."

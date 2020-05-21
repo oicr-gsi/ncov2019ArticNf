@@ -37,6 +37,13 @@ Parameter|Value|Default|Description
 ---|---|---|---
 `renameInputs.mem`|Int|1|Memory (in GB) to allocate to the job.
 `renameInputs.timeout`|Int|1|Maximum amount of time (in hours) the task can run for.
+`illumina_ncov2019ArticNf.allowNoprimer`|Boolean?|None|Allow reads that don't have primer sequence? Ligation prep = false, nextera = true.
+`illumina_ncov2019ArticNf.illuminaKeepLen`|Int?|None|Length of illumina reads to keep after primer trimming.
+`illumina_ncov2019ArticNf.illuminaQualThreshold`|Int?|None|Sliding window quality threshold for keeping reads after primer trimming (illumina).
+`illumina_ncov2019ArticNf.mpileupDepth`|Int?|None|Mpileup depth for ivar.
+`illumina_ncov2019ArticNf.ivarFreqThreshold`|Float?|None|ivar frequency threshold for variant.
+`illumina_ncov2019ArticNf.ivarMinDepth`|Float?|None|Minimum coverage depth to call variant.
+`illumina_ncov2019ArticNf.additionalParameters`|String?|None|Additional parameters to add to the nextflow command.
 `illumina_ncov2019ArticNf.mem`|Int|8|Memory (in GB) to allocate to the job.
 `illumina_ncov2019ArticNf.timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
 `illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf/1 artic-ncov2019/1"|Environment module name and version to load (space separated) before command execution.
@@ -87,4 +94,4 @@ mvn clean verify \
 
 For support, please file an issue on the [Github project](https://github.com/oicr-gsi) or send an email to gsi@oicr.on.ca .
 
-_Generated with wdl_doc_gen (https://github.com/oicr-gsi/wdl_doc_gen/)_
+_Generated with generate-markdown-readme (https://github.com/oicr-gsi/gsi-wdl-tools/)_
