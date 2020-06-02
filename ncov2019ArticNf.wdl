@@ -5,6 +5,7 @@ workflow ncov2019ArticNf {
     File fastqR1
     File fastqR2
     String outputFileNamePrefix
+    String schemeVersion
   }
 
   call renameInputs {
@@ -18,7 +19,8 @@ workflow ncov2019ArticNf {
     input:
       fastqR1 = renameInputs.renamedFastqR1,
       fastqR2 = renameInputs.renamedFastqR2,
-      outputFileNamePrefix = outputFileNamePrefix
+      outputFileNamePrefix = outputFileNamePrefix,
+      schemeVersion = schemeVersion
   }
 
   output {
@@ -37,6 +39,7 @@ workflow ncov2019ArticNf {
     fastqR1: "Read 1 fastq file."
     fastqR2: "Read 2 fastq file."
     outputFileNamePrefix: "Output prefix to prefix output file names with."
+    schemeVersion: "The Artic primer scheme version that was used."
   }
 
   meta {
@@ -106,6 +109,7 @@ task illumina_ncov2019ArticNf {
     File fastqR1
     File fastqR2
     String outputFileNamePrefix
+    String schemeVersion
 
     Boolean? allowNoprimer
     Int? illuminaKeepLen
@@ -117,7 +121,7 @@ task illumina_ncov2019ArticNf {
 
     Int mem = 8
     Int timeout = 5
-    String modules = "ncov2019-artic-nf/1 artic-ncov2019/1"
+    String modules = "ncov2019-artic-nf/2 artic-ncov2019/1"
     String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
   }
@@ -130,6 +134,7 @@ task illumina_ncov2019ArticNf {
     --directory "$(dirname ~{fastqR1})" \
     --prefix "~{outputFileNamePrefix}" \
     --schemeRepoURL ~{ncov2019ArticPath} \
+    --schemeVersion ~{schemeVersion} \
     ~{true="--allowNoprimer true" false="--allowNoprimer false" allowNoprimer} \
     ~{"--illuminaKeepLen " + illuminaKeepLen} \
     ~{"--illuminaQualThreshold " + illuminaQualThreshold} \
