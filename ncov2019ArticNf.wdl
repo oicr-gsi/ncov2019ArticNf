@@ -121,8 +121,8 @@ task illumina_ncov2019ArticNf {
 
     Int mem = 8
     Int timeout = 5
-    String modules = "ncov2019-artic-nf/2 artic-ncov2019/1"
-    String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ROOT"
+    String modules = "ncov2019-artic-nf-illumina/20200526 artic-ncov2019/1"
+    String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
   }
 
@@ -182,7 +182,7 @@ task illumina_ncov2019ArticNf {
     mem: "Memory (in GB) to allocate to the job."
     timeout: "Maximum amount of time (in hours) the task can run for."
     modules: "Environment module name and version to load (space separated) before command execution."
-    ncov2019ArticNextflowPath: "Path to the ncov2019-artic-nf repository directory."
+    ncov2019ArticNextflowPath: "Path to the ncov2019-artic-nf-illumina repository directory."
     ncov2019ArticPath: "Path to the artic-ncov2019 repository directory or url"
   }
 }
