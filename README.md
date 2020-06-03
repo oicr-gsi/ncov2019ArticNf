@@ -65,6 +65,7 @@ Output | Type | Description
 `qcPlotsPng`|File|Qc plot (depth) png from qcPlots step.
 `callVariantsTsv`|File|Variants tsv from callVariants step.
 `qcCsv`|File|Qc csv from qc step.
+`nextflowLogs`|File|All nextflow workflow task stdout and stderr logs gzipped and named by task.
 
 
 ## Niassa + Cromwell

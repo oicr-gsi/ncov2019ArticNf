@@ -33,6 +33,7 @@ workflow ncov2019ArticNf {
     File qcPlotsPng = illumina_ncov2019ArticNf.qcPlotsPng
     File callVariantsTsv = illumina_ncov2019ArticNf.callVariantsTsv
     File qcCsv = illumina_ncov2019ArticNf.qcCsv
+    File nextflowLogs = illumina_ncov2019ArticNf.nextflowLogs
   }
 
   parameter_meta {
@@ -65,7 +66,8 @@ workflow ncov2019ArticNf {
       makeConsensusFasta: "Consensus fasta from makeConsensus step.",
       callVariantsTsv: "Variants tsv from callVariants step.",
       qcPlotsPng: "Qc plot (depth) png from qcPlots step.",
-      qcCsv: "Qc csv from qc step."
+      qcCsv: "Qc csv from qc step.",
+      nextflowLogs: "All nextflow workflow task stdout and stderr logs gzipped and named by task."
     }
   }
 
@@ -148,6 +150,21 @@ task illumina_ncov2019ArticNf {
     ~{outputFileNamePrefix}_R1.trimmed.fastq.gz
     ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R2_val_2.fq.gz" \
     ~{outputFileNamePrefix}_R2.trimmed.fastq.gz
+
+    # extract all logs from the nextflow working directory
+    NEXTFLOW_ID="$(nextflow log -q | head -1)"
+    NEXTFLOW_TASKS=$(nextflow log "${NEXTFLOW_ID}" -f "name,workdir" -s '\t')
+    mkdir -p logs
+    while IFS=$'\t' read -r name workdir; do
+      FILENAME="$(echo "${name}" | sed -e 's/[^A-Za-z0-9._-]/_/g')"
+      if [ -f "$workdir/.command.log" ]; then
+        cp "$workdir/.command.log" "logs/$FILENAME.stdout"
+      fi
+      if [ -f "$workdir/.command.err" ]; then
+        cp "$workdir/.command.err" "logs/$FILENAME.stderr"
+      fi
+    done <<< ${NEXTFLOW_TASKS}
+    tar -zcvf ~{outputFileNamePrefix}.logs.tar.gz logs/
   >>>
 
   output {
@@ -160,6 +177,7 @@ task illumina_ncov2019ArticNf {
     File callVariantsTsv = "results/ncovIllumina_sequenceAnalysis_callVariants/~{outputFileNamePrefix}.variants.tsv"
     File qcPlotsPng = "results/qc_plots/~{outputFileNamePrefix}.depth.png"
     File qcCsv = "results/~{outputFileNamePrefix}.qc.csv"
+    File nextflowLogs = "~{outputFileNamePrefix}.logs.tar.gz"
   }
 
   runtime {
