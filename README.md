@@ -25,6 +25,7 @@ Parameter|Value|Description
 `fastqR1`|File|Read 1 fastq file.
 `fastqR2`|File|Read 2 fastq file.
 `outputFileNamePrefix`|String|Output prefix to prefix output file names with.
+`schemeVersion`|String|The Artic primer scheme version that was used.
 
 
 #### Optional workflow parameters:
@@ -46,8 +47,8 @@ Parameter|Value|Default|Description
 `illumina_ncov2019ArticNf.additionalParameters`|String?|None|Additional parameters to add to the nextflow command.
 `illumina_ncov2019ArticNf.mem`|Int|8|Memory (in GB) to allocate to the job.
 `illumina_ncov2019ArticNf.timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
-`illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf/1 artic-ncov2019/1"|Environment module name and version to load (space separated) before command execution.
-`illumina_ncov2019ArticNf.ncov2019ArticNextflowPath`|String|"$NCOV2019_ARTIC_NF_ROOT"|Path to the ncov2019-artic-nf repository directory.
+`illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf-illumina/20200526 artic-ncov2019/2"|Environment module name and version to load (space separated) before command execution.
+`illumina_ncov2019ArticNf.ncov2019ArticNextflowPath`|String|"$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"|Path to the ncov2019-artic-nf-illumina repository directory.
 `illumina_ncov2019ArticNf.ncov2019ArticPath`|String|"$ARTIC_NCOV2019_ROOT"|Path to the artic-ncov2019 repository directory or url
 
 
@@ -64,6 +65,7 @@ Output | Type | Description
 `qcPlotsPng`|File|Qc plot (depth) png from qcPlots step.
 `callVariantsTsv`|File|Variants tsv from callVariants step.
 `qcCsv`|File|Qc csv from qc step.
+`nextflowLogs`|File|All nextflow workflow task stdout and stderr logs gzipped and named by task.
 
 
 ## Niassa + Cromwell
