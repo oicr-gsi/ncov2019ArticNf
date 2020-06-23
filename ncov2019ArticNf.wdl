@@ -123,7 +123,7 @@ task illumina_ncov2019ArticNf {
 
     Int mem = 8
     Int timeout = 5
-    String modules = "ncov2019-artic-nf-illumina/20200526 artic-ncov2019/2"
+    String modules = "ncov2019-artic-nf-illumina/20200622 artic-ncov2019/2"
     String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
   }
