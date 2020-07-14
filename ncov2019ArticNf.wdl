@@ -49,12 +49,16 @@ workflow ncov2019ArticNf {
     description: "ncov2019ArticNf workflow executes the ncov2019-artic-nf Nextflow workflow from connor-lab (https://github.com/connor-lab/ncov2019-artic-nf)."
     dependencies: [
       {
-        name: "ncov2019-artic-nf/1",
-        url: "https://github.com/connor-lab/ncov2019-artic-nf"
+        name: "ncov2019-artic-nf-illumina/20200714",
+        url: "https://github.com/oicr-gsi/ncov2019-artic-nf"
       },
       {
-        name: "artic-ncov2019/1",
-        url: "https://github.com/artic-network/artic-ncov2019.git"
+        name: "artic-ncov2019/2",
+        url: "https://github.com/oicr-gsi/artic-ncov2019"
+      },
+      {
+        name: "hg38-sars-covid-2/20200714",
+        url: "https://gitlab.oicr.on.ca/ResearchIT/modulator"
       }
     ]
     output_meta: {
@@ -112,6 +116,7 @@ task illumina_ncov2019ArticNf {
     File fastqR2
     String outputFileNamePrefix
     String schemeVersion
+    String viralContigName = "MN908947.3"
 
     Boolean? allowNoprimer
     Int? illuminaKeepLen
@@ -123,9 +128,10 @@ task illumina_ncov2019ArticNf {
 
     Int mem = 8
     Int timeout = 5
-    String modules = "ncov2019-artic-nf-illumina/20200625 artic-ncov2019/2"
+    String modules = "ncov2019-artic-nf-illumina/20200714 artic-ncov2019/2 hg38-sars-covid-2/20200714"
     String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
+    String compositeHumanVirusReferencePath = "$HG38_SARS_COVID_2_ROOT/composite_human_virus_reference.fasta"
   }
 
   command <<<
@@ -143,6 +149,8 @@ task illumina_ncov2019ArticNf {
     ~{"--mpileupDepth " + mpileupDepth} \
     ~{"--ivarFreqThreshold " + ivarFreqThreshold} \
     ~{"--ivarMinDepth " + ivarMinDepth} \
+    --composite_ref ~{compositeHumanVirusReferencePath} \
+    --viral_contig_name ~{viralContigName} \
     ~{additionalParameters}
 
     # rename some of the outputs
@@ -190,6 +198,8 @@ task illumina_ncov2019ArticNf {
     fastqR1: "Read 1 fastq file."
     fastqR2: "Read 2 fastq file."
     outputFileNamePrefix: "Output prefix to prefix output file names with."
+    schemeVersion: "The Artic primer scheme version that was used."
+    viralContigName: "Viral contig name to retain during non-human filtering step."
     allowNoprimer: "Allow reads that don't have primer sequence? Ligation prep = false, nextera = true."
     illuminaKeepLen: "Length of illumina reads to keep after primer trimming."
     illuminaQualThreshold: "Sliding window quality threshold for keeping reads after primer trimming (illumina)."
@@ -202,5 +212,6 @@ task illumina_ncov2019ArticNf {
     modules: "Environment module name and version to load (space separated) before command execution."
     ncov2019ArticNextflowPath: "Path to the ncov2019-artic-nf-illumina repository directory."
     ncov2019ArticPath: "Path to the artic-ncov2019 repository directory or url"
+    compositeHumanVirusReferencePath: "Path to the composite reference to use during non-human filtering step."
   }
 }
