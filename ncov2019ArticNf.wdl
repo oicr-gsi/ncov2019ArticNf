@@ -154,9 +154,9 @@ task illumina_ncov2019ArticNf {
     ~{additionalParameters}
 
     # rename some of the outputs
-    ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R1_val_1.fq.gz" \
+    ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_hostfiltered_R1_val_1.fq.gz" \
     ~{outputFileNamePrefix}_R1.trimmed.fastq.gz
-    ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_R2_val_2.fq.gz" \
+    ln -s "results/ncovIllumina_sequenceAnalysis_readTrimming/~{outputFileNamePrefix}_hostfiltered_R2_val_2.fq.gz" \
     ~{outputFileNamePrefix}_R2.trimmed.fastq.gz
 
     # extract all logs from the nextflow working directory
