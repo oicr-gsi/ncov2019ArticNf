@@ -6,8 +6,9 @@ ncov2019ArticNf workflow executes the ncov2019-artic-nf Nextflow workflow from c
 
 ## Dependencies
 
-* [ncov2019-artic-nf 1](https://github.com/connor-lab/ncov2019-artic-nf)
-* [artic-ncov2019 1](https://github.com/artic-network/artic-ncov2019.git)
+* [ncov2019-artic-nf-illumina 20200714](https://github.com/oicr-gsi/ncov2019-artic-nf)
+* [artic-ncov2019 2](https://github.com/oicr-gsi/artic-ncov2019)
+* [hg38-sars-covid-2 20200714](https://gitlab.oicr.on.ca/ResearchIT/modulator)
 
 
 ## Usage
@@ -38,6 +39,7 @@ Parameter|Value|Default|Description
 ---|---|---|---
 `renameInputs.mem`|Int|1|Memory (in GB) to allocate to the job.
 `renameInputs.timeout`|Int|1|Maximum amount of time (in hours) the task can run for.
+`illumina_ncov2019ArticNf.viralContigName`|String|"MN908947.3"|Viral contig name to retain during non-human filtering step.
 `illumina_ncov2019ArticNf.allowNoprimer`|Boolean?|None|Allow reads that don't have primer sequence? Ligation prep = false, nextera = true.
 `illumina_ncov2019ArticNf.illuminaKeepLen`|Int?|None|Length of illumina reads to keep after primer trimming.
 `illumina_ncov2019ArticNf.illuminaQualThreshold`|Int?|None|Sliding window quality threshold for keeping reads after primer trimming (illumina).
@@ -47,9 +49,10 @@ Parameter|Value|Default|Description
 `illumina_ncov2019ArticNf.additionalParameters`|String?|None|Additional parameters to add to the nextflow command.
 `illumina_ncov2019ArticNf.mem`|Int|8|Memory (in GB) to allocate to the job.
 `illumina_ncov2019ArticNf.timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
-`illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf-illumina/20200625 artic-ncov2019/2"|Environment module name and version to load (space separated) before command execution.
+`illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf-illumina/20200714 artic-ncov2019/2 hg38-sars-covid-2/20200714"|Environment module name and version to load (space separated) before command execution.
 `illumina_ncov2019ArticNf.ncov2019ArticNextflowPath`|String|"$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"|Path to the ncov2019-artic-nf-illumina repository directory.
 `illumina_ncov2019ArticNf.ncov2019ArticPath`|String|"$ARTIC_NCOV2019_ROOT"|Path to the artic-ncov2019 repository directory or url
+`illumina_ncov2019ArticNf.compositeHumanVirusReferencePath`|String|"$HG38_SARS_COVID_2_ROOT/composite_human_virus_reference.fasta"|Path to the composite reference to use during non-human filtering step.
 
 
 ### Outputs
