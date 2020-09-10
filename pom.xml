@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>ncov2019ArticNf</artifactId>
-    <version>1.4</version>
+    <version>1.5</version>
 
     <properties>
         <wdl-workflow>ncov2019ArticNf.wdl</wdl-workflow>
