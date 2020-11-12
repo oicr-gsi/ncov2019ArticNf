@@ -6,8 +6,9 @@ ncov2019ArticNf workflow executes the ncov2019-artic-nf Nextflow workflow from c
 
 ## Dependencies
 
-* [ncov2019-artic-nf-illumina 20200910](https://github.com/oicr-gsi/ncov2019-artic-nf)
+* [ncov2019-artic-nf-illumina 20201111](https://github.com/oicr-gsi/ncov2019-artic-nf)
 * [artic-ncov2019 2](https://github.com/oicr-gsi/artic-ncov2019)
+* [ncov2019primernames 20201112](https://gitlab.oicr.on.ca/ResearchIT/modulator)
 * [hg38-sars-covid-2 20200714](https://gitlab.oicr.on.ca/ResearchIT/modulator)
 
 
@@ -49,10 +50,11 @@ Parameter|Value|Default|Description
 `illumina_ncov2019ArticNf.additionalParameters`|String?|None|Additional parameters to add to the nextflow command.
 `illumina_ncov2019ArticNf.mem`|Int|8|Memory (in GB) to allocate to the job.
 `illumina_ncov2019ArticNf.timeout`|Int|5|Maximum amount of time (in hours) the task can run for.
-`illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf-illumina/20200910 artic-ncov2019/2 hg38-sars-covid-2/20200714"|Environment module name and version to load (space separated) before command execution.
+`illumina_ncov2019ArticNf.modules`|String|"ncov2019-artic-nf-illumina/20201111 artic-ncov2019/2 ncov2019primernames/20201112 hg38-sars-covid-2/20200714"|Environment module name and version to load (space separated) before command execution.
 `illumina_ncov2019ArticNf.ncov2019ArticNextflowPath`|String|"$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"|Path to the ncov2019-artic-nf-illumina repository directory.
 `illumina_ncov2019ArticNf.ncov2019ArticPath`|String|"$ARTIC_NCOV2019_ROOT"|Path to the artic-ncov2019 repository directory or url
 `illumina_ncov2019ArticNf.compositeHumanVirusReferencePath`|String|"$HG38_SARS_COVID_2_ROOT/composite_human_virus_reference.fasta"|Path to the composite reference to use during non-human filtering step.
+`illumina_ncov2019ArticNf.ncov2019primerNames`|String|"$NCOV2019PRIMERNAMES/nCoV-2019.outer.V3.primernames.tsv"|Path to primer names for improved primer trimming.
 
 
 ### Outputs
