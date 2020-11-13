@@ -49,12 +49,16 @@ workflow ncov2019ArticNf {
     description: "ncov2019ArticNf workflow executes the ncov2019-artic-nf Nextflow workflow from connor-lab (https://github.com/connor-lab/ncov2019-artic-nf)."
     dependencies: [
       {
-        name: "ncov2019-artic-nf-illumina/20200910",
+        name: "ncov2019-artic-nf-illumina/20201111",
         url: "https://github.com/oicr-gsi/ncov2019-artic-nf"
       },
       {
         name: "artic-ncov2019/2",
         url: "https://github.com/oicr-gsi/artic-ncov2019"
+      },
+      {
+        name: "ncov2019primernames/20201112",
+        url: "https://gitlab.oicr.on.ca/ResearchIT/modulator"
       },
       {
         name: "hg38-sars-covid-2/20200714",
@@ -128,10 +132,11 @@ task illumina_ncov2019ArticNf {
 
     Int mem = 8
     Int timeout = 5
-    String modules = "ncov2019-artic-nf-illumina/20200910 artic-ncov2019/2 hg38-sars-covid-2/20200714"
+    String modules = "ncov2019-artic-nf-illumina/20201111 artic-ncov2019/2 ncov2019primernames/20201112 hg38-sars-covid-2/20200714"
     String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
     String compositeHumanVirusReferencePath = "$HG38_SARS_COVID_2_ROOT/composite_human_virus_reference.fasta"
+    String ncov2019primerNames = "$NCOV2019PRIMERNAMES_ROOT/nCoV-2019.outer.V3.primernames.tsv"
   }
 
   command <<<
@@ -151,6 +156,7 @@ task illumina_ncov2019ArticNf {
     ~{"--ivarMinDepth " + ivarMinDepth} \
     --composite_ref ~{compositeHumanVirusReferencePath} \
     --viral_contig_name ~{viralContigName} \
+    --primer_pairs_tsv ~{ncov2019primerNames} \
     ~{additionalParameters}
 
     # rename some of the outputs
@@ -213,5 +219,6 @@ task illumina_ncov2019ArticNf {
     ncov2019ArticNextflowPath: "Path to the ncov2019-artic-nf-illumina repository directory."
     ncov2019ArticPath: "Path to the artic-ncov2019 repository directory or url"
     compositeHumanVirusReferencePath: "Path to the composite reference to use during non-human filtering step."
+    ncov2019primerNames: "Path to primer names for improved primer trimming."
   }
 }
