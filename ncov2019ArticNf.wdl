@@ -136,7 +136,7 @@ task illumina_ncov2019ArticNf {
     String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
     String compositeHumanVirusReferencePath = "$HG38_SARS_COVID_2_ROOT/composite_human_virus_reference.fasta"
-    String ncov2019primerNames = "$NCOV2019PRIMERNAMES/nCoV-2019.outer.V3.primernames.tsv"
+    String ncov2019primerNames = "$NCOV2019PRIMERNAMES_ROOT/nCoV-2019.outer.V3.primernames.tsv"
   }
 
   command <<<
