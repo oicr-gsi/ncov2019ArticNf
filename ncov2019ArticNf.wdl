@@ -49,7 +49,7 @@ workflow ncov2019ArticNf {
     description: "ncov2019ArticNf workflow executes the ncov2019-artic-nf Nextflow workflow from connor-lab (https://github.com/connor-lab/ncov2019-artic-nf)."
     dependencies: [
       {
-        name: "ncov2019-artic-nf-illumina/20201111",
+        name: "ncov2019-artic-nf-illumina/20210406",
         url: "https://github.com/oicr-gsi/ncov2019-artic-nf"
       },
       {
@@ -132,7 +132,7 @@ task illumina_ncov2019ArticNf {
 
     Int mem = 8
     Int timeout = 5
-    String modules = "ncov2019-artic-nf-illumina/20201111 artic-ncov2019/2 ncov2019primernames/20201112 hg38-sars-covid-2/20200714"
+    String modules = "ncov2019-artic-nf-illumina/20210406 artic-ncov2019/2 ncov2019primernames/20201112 hg38-sars-covid-2/20200714"
     String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
     String compositeHumanVirusReferencePath = "$HG38_SARS_COVID_2_ROOT/composite_human_virus_reference.fasta"
