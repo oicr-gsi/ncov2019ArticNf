@@ -30,8 +30,8 @@ workflow ncov2019ArticNf {
     File trimPrimerSequencesBam = illumina_ncov2019ArticNf.trimPrimerSequencesBam
     File trimPrimerSequencesPrimerTrimmedBam = illumina_ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam
     File makeConsensusFasta = illumina_ncov2019ArticNf.makeConsensusFasta
+    File makeConsensusVcf = illumina_ncov2019ArticNf.makeConsensusVcf
     File qcPlotsPng = illumina_ncov2019ArticNf.qcPlotsPng
-    File callVariantsTsv = illumina_ncov2019ArticNf.callVariantsTsv
     File qcCsv = illumina_ncov2019ArticNf.qcCsv
     File nextflowLogs = illumina_ncov2019ArticNf.nextflowLogs
   }
@@ -49,7 +49,7 @@ workflow ncov2019ArticNf {
     description: "ncov2019ArticNf workflow executes the ncov2019-artic-nf Nextflow workflow from connor-lab (https://github.com/connor-lab/ncov2019-artic-nf)."
     dependencies: [
       {
-        name: "ncov2019-artic-nf-illumina/20201111",
+        name: "ncov2019-artic-nf-illumina/20210406",
         url: "https://github.com/oicr-gsi/ncov2019-artic-nf"
       },
       {
@@ -132,7 +132,7 @@ task illumina_ncov2019ArticNf {
 
     Int mem = 8
     Int timeout = 5
-    String modules = "ncov2019-artic-nf-illumina/20201111 artic-ncov2019/2 ncov2019primernames/20201112 hg38-sars-covid-2/20200714"
+    String modules = "ncov2019-artic-nf-illumina/20210406 artic-ncov2019/2 ncov2019primernames/20201112 hg38-sars-covid-2/20200714"
     String ncov2019ArticNextflowPath = "$NCOV2019_ARTIC_NF_ILLUMINA_ROOT"
     String ncov2019ArticPath = "$ARTIC_NCOV2019_ROOT"
     String compositeHumanVirusReferencePath = "$HG38_SARS_COVID_2_ROOT/composite_human_virus_reference.fasta"
@@ -187,8 +187,8 @@ task illumina_ncov2019ArticNf {
     File readMappingBam = "results/ncovIllumina_sequenceAnalysis_readMapping/~{outputFileNamePrefix}.sorted.bam"
     File trimPrimerSequencesBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.bam"
     File trimPrimerSequencesPrimerTrimmedBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.primertrimmed.sorted.bam"
-    File makeConsensusFasta = "results/ncovIllumina_sequenceAnalysis_makeConsensus/~{outputFileNamePrefix}.primertrimmed.consensus.fa"
-    File callVariantsTsv = "results/ncovIllumina_sequenceAnalysis_callVariants/~{outputFileNamePrefix}.variants.tsv"
+    File makeConsensusFasta = "results/ncovIllumina_sequenceAnalysis_callConsensusFreebayes/~{outputFileNamePrefix}.consensus.fasta"
+    File makeConsensusVcf = "results/ncovIllumina_sequenceAnalysis_callConsensusFreebayes/~{outputFileNamePrefix}.variants.norm.vcf"
     File qcPlotsPng = "results/qc_plots/~{outputFileNamePrefix}.depth.png"
     File qcCsv = "results/~{outputFileNamePrefix}.qc.csv"
     File nextflowLogs = "~{outputFileNamePrefix}.logs.tar.gz"
