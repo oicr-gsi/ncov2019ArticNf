@@ -187,7 +187,7 @@ task illumina_ncov2019ArticNf {
     File readMappingBam = "results/ncovIllumina_sequenceAnalysis_readMapping/~{outputFileNamePrefix}.sorted.bam"
     File trimPrimerSequencesBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.bam"
     File trimPrimerSequencesPrimerTrimmedBam = "results/ncovIllumina_sequenceAnalysis_trimPrimerSequences/~{outputFileNamePrefix}.mapped.primertrimmed.sorted.bam"
-	File makeConsensusFasta = "results/ncovIllumina_sequenceAnalysis_callConsensusFreebayes/~{outputFileNamePrefix}.consensus.fasta"
+    File makeConsensusFasta = "results/ncovIllumina_sequenceAnalysis_callConsensusFreebayes/~{outputFileNamePrefix}.consensus.fasta"
     File makeConsensusVcf = "results/ncovIllumina_sequenceAnalysis_callConsensusFreebayes/~{outputFileNamePrefix}.variants.norm.vcf"
     File qcPlotsPng = "results/qc_plots/~{outputFileNamePrefix}.depth.png"
     File qcCsv = "results/~{outputFileNamePrefix}.qc.csv"
