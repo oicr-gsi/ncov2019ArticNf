@@ -30,8 +30,8 @@ workflow ncov2019ArticNf {
     File trimPrimerSequencesBam = illumina_ncov2019ArticNf.trimPrimerSequencesBam
     File trimPrimerSequencesPrimerTrimmedBam = illumina_ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam
     File makeConsensusFasta = illumina_ncov2019ArticNf.makeConsensusFasta
+	File makeConsensusVcf = illumina_ncov2019ArticNf.makeConsensusVcf
     File qcPlotsPng = illumina_ncov2019ArticNf.qcPlotsPng
-    File callVariantsTsv = illumina_ncov2019ArticNf.callVariantsTsv
     File qcCsv = illumina_ncov2019ArticNf.qcCsv
     File nextflowLogs = illumina_ncov2019ArticNf.nextflowLogs
   }
