@@ -1,0 +1,702 @@
+[
+    {
+        "arguments": {
+            "ncov2019ArticNf.fastqR1": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SWID_16554996_SCTSK_0004_R1_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.fastqR2": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SWID_16554996_SCTSK_0004_R2_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.additionalParameters": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.allowNoprimer": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.compositeHumanVirusReferencePath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaKeepLen": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaQualThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarFreqThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarMinDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mem": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.modules": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mpileupDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticNextflowPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.renameInputs.mem": null,
+            "ncov2019ArticNf.renameInputs.timeout": null,
+            "ncov2019ArticNf.schemeVersion": "V2"
+        },
+        "description": "ncov2019ArticNf workflow test",
+        "engineArguments": {},
+        "id": "SCTSK_0004_test",
+        "metadata": {
+            "ncov2019ArticNf.makeConsensusFasta": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.makeConsensusVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.nextflowLogs": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcCsv": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcPlotsPng": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readMappingBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR1": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR2": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/SCTSK_0004_test.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "ncov2019ArticNf.fastqR1": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.fastqR2": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.additionalParameters": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.allowNoprimer": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.compositeHumanVirusReferencePath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaKeepLen": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaQualThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarFreqThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarMinDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mem": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.modules": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mpileupDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticNextflowPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.renameInputs.mem": null,
+            "ncov2019ArticNf.renameInputs.timeout": null,
+            "ncov2019ArticNf.schemeVersion": "V2"
+        },
+        "description": "ncov2019ArticNf workflow test",
+        "engineArguments": {},
+        "id": "SCTSK_0004_nn_n_PE_661_TS_S10_test",
+        "metadata": {
+            "ncov2019ArticNf.makeConsensusFasta": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.makeConsensusVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.nextflowLogs": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcCsv": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcPlotsPng": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readMappingBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR1": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR2": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/SCTSK_0004_nn_n_PE_661_TS_S10_test.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "ncov2019ArticNf.fastqR1": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.fastqR2": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.additionalParameters": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.allowNoprimer": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.compositeHumanVirusReferencePath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaKeepLen": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaQualThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarFreqThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarMinDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mem": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.modules": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mpileupDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticNextflowPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.renameInputs.mem": null,
+            "ncov2019ArticNf.renameInputs.timeout": null,
+            "ncov2019ArticNf.schemeVersion": "V3"
+        },
+        "description": "ncov2019ArticNf workflow test",
+        "engineArguments": {},
+        "id": "SCTSK_0004_v3",
+        "metadata": {
+            "ncov2019ArticNf.makeConsensusFasta": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.makeConsensusVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.nextflowLogs": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcCsv": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcPlotsPng": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readMappingBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR1": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR2": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_v3_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/SCTSK_0004_v3.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "ncov2019ArticNf.fastqR1": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.fastqR2": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.additionalParameters": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.allowNoprimer": true,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.compositeHumanVirusReferencePath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaKeepLen": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaQualThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarFreqThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarMinDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mem": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.modules": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mpileupDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticNextflowPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.renameInputs.mem": null,
+            "ncov2019ArticNf.renameInputs.timeout": null,
+            "ncov2019ArticNf.schemeVersion": "V2"
+        },
+        "description": "ncov2019ArticNf workflow test",
+        "engineArguments": {},
+        "id": "allow_no_primers_true",
+        "metadata": {
+            "ncov2019ArticNf.makeConsensusFasta": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.makeConsensusVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.nextflowLogs": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcCsv": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcPlotsPng": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readMappingBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR1": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR2": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_true_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/allow_no_primers_true.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "ncov2019ArticNf.fastqR1": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.fastqR2": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.additionalParameters": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.allowNoprimer": false,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.compositeHumanVirusReferencePath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaKeepLen": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.illuminaQualThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarFreqThreshold": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ivarMinDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mem": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.modules": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.mpileupDepth": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticNextflowPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019ArticPath": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
+            "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.renameInputs.mem": null,
+            "ncov2019ArticNf.renameInputs.timeout": null,
+            "ncov2019ArticNf.schemeVersion": "V2"
+        },
+        "description": "ncov2019ArticNf workflow test",
+        "engineArguments": {},
+        "id": "allow_no_primers_false",
+        "metadata": {
+            "ncov2019ArticNf.makeConsensusFasta": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.makeConsensusVcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.nextflowLogs": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcCsv": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.qcPlotsPng": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readMappingBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR1": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.readTrimmingFastqR2": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_allow_no_primers_false_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/allow_no_primers_false.metrics",
+                "type": "script"
+            }
+        ]
+    }
+]
