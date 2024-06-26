@@ -66,17 +66,51 @@ workflow ncov2019ArticNf {
       }
     ]
     output_meta: {
-      readTrimmingFastqR1: "Fastq R1 from readTrimming step.",
-      readTrimmingFastqR2: "Fastq R1 from readTrimming step.",
-      readMappingBam: "Sorted bam from readMapping step.",
-      trimPrimerSequencesBam: "Mapped bam from trimPrimerSequences step.",
-      trimPrimerSequencesPrimerTrimmedBam: "Mapped + primer trimmer bam from trimPrimerSequences step.",
-      makeConsensusFasta: "Consensus fasta from makeConsensus step.",
-      callVariantsTsv: "Variants tsv from callVariants step.",
-      qcPlotsPng: "Qc plot (depth) png from qcPlots step.",
-      qcCsv: "Qc csv from qc step.",
-      nextflowLogs: "All nextflow workflow task stdout and stderr logs gzipped and named by task."
+    readTrimmingFastqR1: {
+        description: "Fastq R1 from readTrimming step.",
+        vidarr_label: "readTrimmingFastqR1"
+    },
+    readTrimmingFastqR2: {
+        description: "Fastq R1 from readTrimming step.",
+        vidarr_label: "readTrimmingFastqR2"
+    },
+    readMappingBam: {
+        description: "Sorted bam from readMapping step.",
+        vidarr_label: "readMappingBam"
+    },
+    trimPrimerSequencesBam: {
+        description: "Mapped bam from trimPrimerSequences step.",
+        vidarr_label: "trimPrimerSequencesBam"
+    },
+    trimPrimerSequencesPrimerTrimmedBam: {
+        description: "Mapped + primer trimmer bam from trimPrimerSequences step.",
+        vidarr_label: "trimPrimerSequencesPrimerTrimmedBam"
+    },
+    makeConsensusFasta: {
+        description: "Consensus fasta from makeConsensus step.",
+        vidarr_label: "makeConsensusFasta"
+    },
+    makeConsensusVcf: {
+        description: "Consensus vcf from makeConsensus step.",
+        vidarr_label: "makeConsensusVcf"
+    },
+    callVariantsTsv: {
+        description: "Variants tsv from callVariants step.",
+        vidarr_label: "callVariantsTsv"
+    },
+    qcPlotsPng: {
+        description: "Qc plot (depth) png from qcPlots step.",
+        vidarr_label: "qcPlotsPng"
+    },
+    qcCsv: {
+        description: "Qc csv from qc step.",
+        vidarr_label: "qcCsv"
+    },
+    nextflowLogs: {
+        description: "All nextflow workflow task stdout and stderr logs gzipped and named by task.",
+        vidarr_label: "nextflowLogs"
     }
+}
   }
 
 }
