@@ -46,7 +46,10 @@
             "ncov2019ArticNf.schemeVersion": "V2"
         },
         "description": "ncov2019ArticNf workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+         },
         "id": "SCTSK_0004_test",
         "metadata": {
             "ncov2019ArticNf.makeConsensusFasta": {
@@ -186,7 +189,10 @@
             "ncov2019ArticNf.schemeVersion": "V2"
         },
         "description": "ncov2019ArticNf workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "SCTSK_0004_nn_n_PE_661_TS_S10_test",
         "metadata": {
             "ncov2019ArticNf.makeConsensusFasta": {
@@ -326,7 +332,10 @@
             "ncov2019ArticNf.schemeVersion": "V3"
         },
         "description": "ncov2019ArticNf workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "SCTSK_0004_v3",
         "metadata": {
             "ncov2019ArticNf.makeConsensusFasta": {
@@ -466,7 +475,10 @@
             "ncov2019ArticNf.schemeVersion": "V2"
         },
         "description": "ncov2019ArticNf workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "allow_no_primers_true",
         "metadata": {
             "ncov2019ArticNf.makeConsensusFasta": {
@@ -606,7 +618,10 @@
             "ncov2019ArticNf.schemeVersion": "V2"
         },
         "description": "ncov2019ArticNf workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "allow_no_primers_false",
         "metadata": {
             "ncov2019ArticNf.makeConsensusFasta": {
