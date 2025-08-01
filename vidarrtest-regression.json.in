@@ -3,7 +3,7 @@
         "arguments": {
             "ncov2019ArticNf.fastqR1": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SWID_16554996_SCTSK_0004_R1_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SWID_Test_R1.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -15,7 +15,7 @@
             },
             "ncov2019ArticNf.fastqR2": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SWID_16554996_SCTSK_0004_R2_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SWID_Test_R2.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -40,7 +40,7 @@
             "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
-            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_Test_04",
             "ncov2019ArticNf.renameInputs.mem": null,
             "ncov2019ArticNf.renameInputs.timeout": null,
             "ncov2019ArticNf.schemeVersion": "V2"
@@ -137,7 +137,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/SCTSK_0004_test.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/workflow_test_01.metrics",
                 "type": "script"
             }
         ]
@@ -146,7 +146,7 @@
         "arguments": {
             "ncov2019ArticNf.fastqR1": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R1.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -158,7 +158,7 @@
             },
             "ncov2019ArticNf.fastqR2": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R2.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -183,7 +183,7 @@
             "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
-            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_Test_04",
             "ncov2019ArticNf.renameInputs.mem": null,
             "ncov2019ArticNf.renameInputs.timeout": null,
             "ncov2019ArticNf.schemeVersion": "V2"
@@ -193,12 +193,12 @@
            "write_to_cache": false,
            "read_from_cache": false
         },
-        "id": "SCTSK_0004_nn_n_PE_661_TS_S10_test",
+        "id": "SCTSK_test",
         "metadata": {
             "ncov2019ArticNf.makeConsensusFasta": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -206,7 +206,7 @@
             "ncov2019ArticNf.makeConsensusVcf": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -214,7 +214,7 @@
             "ncov2019ArticNf.nextflowLogs": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -222,7 +222,7 @@
             "ncov2019ArticNf.qcCsv": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -230,7 +230,7 @@
             "ncov2019ArticNf.qcPlotsPng": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -238,7 +238,7 @@
             "ncov2019ArticNf.readMappingBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -246,7 +246,7 @@
             "ncov2019ArticNf.readTrimmingFastqR1": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -254,7 +254,7 @@
             "ncov2019ArticNf.readTrimmingFastqR2": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -262,7 +262,7 @@
             "ncov2019ArticNf.trimPrimerSequencesBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -270,7 +270,7 @@
             "ncov2019ArticNf.trimPrimerSequencesPrimerTrimmedBam": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_0004_nn_n_PE_661_TS_S10_test_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_ncov2019ArticNf_SCTSK_test_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -280,7 +280,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/SCTSK_0004_nn_n_PE_661_TS_S10_test.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/workflow_test_02.metrics",
                 "type": "script"
             }
         ]
@@ -289,7 +289,7 @@
         "arguments": {
             "ncov2019ArticNf.fastqR1": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R1.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -301,7 +301,7 @@
             },
             "ncov2019ArticNf.fastqR2": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R2.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -326,7 +326,7 @@
             "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
-            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_Test_04",
             "ncov2019ArticNf.renameInputs.mem": null,
             "ncov2019ArticNf.renameInputs.timeout": null,
             "ncov2019ArticNf.schemeVersion": "V3"
@@ -423,7 +423,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/SCTSK_0004_v3.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/workflow_test_03.metrics",
                 "type": "script"
             }
         ]
@@ -432,7 +432,7 @@
         "arguments": {
             "ncov2019ArticNf.fastqR1": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R1.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -444,7 +444,7 @@
             },
             "ncov2019ArticNf.fastqR2": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R2.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -469,7 +469,7 @@
             "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
-            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_Test_04",
             "ncov2019ArticNf.renameInputs.mem": null,
             "ncov2019ArticNf.renameInputs.timeout": null,
             "ncov2019ArticNf.schemeVersion": "V2"
@@ -566,7 +566,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/allow_no_primers_true.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/workflow_test_04.metrics",
                 "type": "script"
             }
         ]
@@ -575,7 +575,7 @@
         "arguments": {
             "ncov2019ArticNf.fastqR1": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R1_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R1.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -587,7 +587,7 @@
             },
             "ncov2019ArticNf.fastqR2": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/input_data/SCTSK_0004_nn_n_PE_661_TS_S10_L001_R2_001.fastq.gz",
+                    "configuration": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/test_inputs/SCTSK_Test_R2.fastq.gz",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -612,7 +612,7 @@
             "ncov2019ArticNf.illumina_ncov2019ArticNf.ncov2019primerNames": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.timeout": null,
             "ncov2019ArticNf.illumina_ncov2019ArticNf.viralContigName": null,
-            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_0004",
+            "ncov2019ArticNf.outputFileNamePrefix": "SCTSK_Test_04",
             "ncov2019ArticNf.renameInputs.mem": null,
             "ncov2019ArticNf.renameInputs.timeout": null,
             "ncov2019ArticNf.schemeVersion": "V2"
@@ -709,7 +709,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/allow_no_primers_false.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/ncov2019ArticNf/output_metrics/workflow_test_05.metrics",
                 "type": "script"
             }
         ]
